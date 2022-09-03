@@ -7,7 +7,7 @@ from .unauthorized import UnauthorizedException
 
 
 class SwitchErrorStates:
-    """_summary_
+    """
     A class for switching between various error status codes returned from the peer servers
     """
 
