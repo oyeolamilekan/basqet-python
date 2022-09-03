@@ -17,16 +17,15 @@ class SwitchErrorStates:
     def switch(self):
         status = self.errordata.status_code
         error_message = self.errordata.json().get('message', None)
-        match status:
-            case 401:
-                raise UnauthorizedException({"message": error_message})
-            case 403:
-                raise ForbiddenException({"message": error_message})
-            case 404:
-                raise NotFoundException({"message": error_message})
-            case 406:
-                raise NotAcceptableException({"message": error_message})
-            case 503:
-                raise ServiceUnavailableException({"message": error_message})
-            case _:
-                raise ServerErrorException({"message": error_message})
+        if status == 401:
+            raise UnauthorizedException({"message": error_message})
+        elif status == 403:
+            raise ForbiddenException({"message": error_message})
+        elif status == 404:
+            raise NotFoundException({"message": error_message})
+        elif status == 406:
+            raise NotAcceptableException({"message": error_message})
+        elif status == 503:
+            raise ServiceUnavailableException({"message": error_message})
+        else:
+            raise ServerErrorException({"message": error_message})
