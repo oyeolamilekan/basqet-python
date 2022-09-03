@@ -1,10 +1,9 @@
-from ..exceptions.forbidden import ForbiddenException
-from ..exceptions.notacceptable import NotAcceptableException
-from ..exceptions.notfound import NotFoundException
-from ..exceptions.servererror import ServerErrorException
-from ..exceptions.serviceunavailable import ServiceUnavailableException
-from ..exceptions.unauthorized import UnauthorizedException
-from ..exceptions.unprocessableentity import UnprocessableEntityException
+from .forbidden import ForbiddenException
+from .not_acceptable import NotAcceptableException
+from .not_found import NotFoundException
+from .server_error import ServerErrorException
+from .service_unavailable import ServiceUnavailableException
+from .unauthorized import UnauthorizedException
 
 
 class SwitchErrorStates:
@@ -27,8 +26,6 @@ class SwitchErrorStates:
                 raise NotFoundException({"message": error_message})
             case 406:
                 raise NotAcceptableException({"message": error_message})
-            case 422:
-                raise UnprocessableEntityException({"message": error_message})
             case 503:
                 raise ServiceUnavailableException({"message": error_message})
             case _:
