@@ -20,7 +20,7 @@ setup(
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.10',
     ],
-    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+    packages=find_packages(exclude=['contrib', 'docs', 'tests', 'demo']),
     install_requires=['requests'],
     author_email="johnsonoye34@gmail.com",
 )
