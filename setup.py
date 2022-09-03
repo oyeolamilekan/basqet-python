@@ -22,5 +22,5 @@ setup(
     ],
     packages=find_packages(exclude=['contrib', 'docs', 'tests']),
     install_requires=['requests'],
-    author_email="oye@appstate.co",
+    author_email="johnsonoye34@gmail.com",
 )
